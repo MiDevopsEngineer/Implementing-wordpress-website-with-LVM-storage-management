@@ -10,7 +10,7 @@ Note: I will be running the same commands from step 1 to 11 on the 2 instances s
 
 3. Open up the Linux terminal to begin configuration. Run `lsblk` command to inspect what block devices are attached to the server.Their names are xvdf, xvdh, xvdg.
 ![lsblk output](./images/4.PNG)
-To inspact that all devices in Linux reside in /dev/ directory, run `ls /dev/`
+To inspect that all devices in Linux reside in /dev/ directory, run `ls /dev/`
 ![lsblk output](./images/5.PNG)
 
 4. Use `df -h` command to see all mounts and free space on your server.
@@ -20,7 +20,7 @@ To inspact that all devices in Linux reside in /dev/ directory, run `ls /dev/`
 ![single partition output output](./images/7a.PNG)
 ![single partition output](./images/7b.PNG)
 
-6. Use lsblk utility to view the newly configured partition on each of the 3 disks. 
+6. Use `lsblk ` utility to view the newly configured partition on each of the 3 disks. 
 ![newly created partition output](./images/8.PNG)
 
 7. Install lvm2 package using `sudo yum install lvm2` 
@@ -69,7 +69,7 @@ Run `sudo lsblk`
 20. Mount /var/log on logs-lv logical volume. (Note that all the existing data on /var/log will be deleted. That is why step 16 above is very important) `sudo mount /dev/webdata-vg/logs-lv /var/log`
 ![ output](./images/22.PNG)
 
-21. Restore log files back into /var/log directory `sudo rsync -av /home/recovery/logs/log/. /var/log`
+21. Restore log files back into /var/log directory `sudo rsync -av /home/recovery/logs/. /var/log`
 ![restored file output](./images/23a.PNG)
 ![restored file output](./images/23b.PNG)
 
